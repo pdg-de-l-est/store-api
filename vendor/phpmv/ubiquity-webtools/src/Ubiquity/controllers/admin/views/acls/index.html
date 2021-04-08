@@ -1,0 +1,20 @@
+{{ q["header"] | raw }}
+<a class="ui teal button {{inverted}} addNewAclController">
+	<i class="ui car circular icon"></i>
+	Add new Acl controller...
+</a>
+{% if q["msgGlobal"] is defined %}
+<div style="padding: 10px 0px;" id="messages">
+	{{ q["msgGlobal"] | raw }}
+</div>
+{% endif %}
+<br>
+<div id="response"></div>
+<br>
+<div class='ui {{inverted}} segment'>{{ q["providers"] | raw }}</div>
+<div id="form"></div>
+<div id='aclsPart'>
+	{{ q["acls"] | raw }}
+</div>
+
+{{ script_foot | raw }}

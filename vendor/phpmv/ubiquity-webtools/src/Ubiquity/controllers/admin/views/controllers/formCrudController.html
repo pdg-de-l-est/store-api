@@ -1,0 +1,83 @@
+<form class="ui {{inverted}} form" id="crud-controller-frm" novalidate>
+	<div class="ui top attached secondary {{inverted}} segment">Adding a CRUD controller</div>
+	<div class="ui attached {{inverted}} segment">
+			<div class="two fields">
+			<div class="field">
+				<label for="crud-name">Name</label>
+				<div class="ui labeled {{inverted}} input">
+					<div class="ui {{inverted}} label">
+					    {{controllerNS}}
+					</div>
+					<input id="crud-name" name="crud-name">
+				</div>
+			</div>
+			<div class="field">
+				<label for="crud-model">Model</label>
+				{{q ["resources-list"] | raw }}
+			</div>
+		</div>
+		<div class="two fields">
+			<div class="field">
+				<div class="ui slider {{inverted}} checkbox" id="crud-datas-ck">
+				  <input type="checkbox" name="crud-datas" id="crud-datas">
+				  <label for="crud-datas">Create override Datas class</label>
+				</div>
+			</div>
+			<div class="field">
+				<div class="ui slider {{inverted}} checkbox" id="crud-viewer-ck">
+				  <input type="checkbox" name="crud-viewer" id="crud-viewer">
+				  <label for="crud-viewer">Create override ModelViewer class</label>
+				</div>
+			</div>
+		</div>
+		<div class="two fields">
+			<div class="field">
+				<div class="ui slider {{inverted}} checkbox" id="crud-events-ck">
+				  <input type="checkbox" name="crud-events" id="crud-events">
+				  <label for="crud-events">Create override Events class</label>
+				</div>
+			</div>
+			<div class="field">
+				<div class="ui slider {{inverted}} checkbox _views" id="crud-files-ck">
+				  <input type="checkbox" name="crud-files" id="crud-files">
+				  <label for="crud-files">Create override CRUDFiles class (URLs and files)</label>
+				</div>
+				<div id="div-view-list" style="display:none;width: 100%;">
+				<br>
+				{{ q["view-list"] | raw }}
+					<div id='ck-view-inheritance' class="ui {{inverted}} checkbox">
+					  <input type="checkbox" name="ck-use-inheritance" id="ck-use-inheritance">
+					  <label for="ck-use-inheritance">Use inheritance on views</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="field">
+				<div class="ui checkbox">
+				  <input type="checkbox" name="ck-add-route" id="ck-add-route">
+				  <label for="ck-add-route">Add route...</label>
+				</div>
+		</div>
+		<div id="div-new-route" style="display: none;">
+			<div class="ui divider"></div>
+			<div class="three fields">
+				<div class="field">
+					<label for="route-path">Path</label>
+					<input id="route-path" name="route-path" value="">
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+<div class="ui {{inverted}} segment">
+  <button id="validate-btn" class="ui button {{inverted}} positive">
+  	<i id="icon-bt-okay" class="icon check circle"></i>
+  	 Validate
+  </button>
+  &nbsp;
+  <button id="cancel-btn" class="ui {{inverted}} button">
+  	<i id="icon-bt-cancel" class="icon remove circle outline"></i>
+  	 Cancel
+  </button>
+</div>
+{{ script_foot | raw }}

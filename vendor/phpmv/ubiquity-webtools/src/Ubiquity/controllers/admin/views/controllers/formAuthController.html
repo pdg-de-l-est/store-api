@@ -1,0 +1,61 @@
+<form class="ui {{inverted}} form" id="auth-controller-frm" novalidate>
+	<div class="ui top attached secondary {{inverted}} segment">Adding an Auth controller</div>
+	<div class="ui attached {{inverted}} segment">
+		<div class="two fields">
+			<div class="field">
+				<label for="auth-name">Name</label>
+				<div class="ui labeled {{inverted}} input">
+					<div class="ui {{inverted}} label">
+					    {{controllerNS}}
+					</div>
+					<input id="auth-name" name="auth-name" placeholder="AuthController name">
+				</div>
+			</div>
+			<div class="field">
+				<label for="auth-name">Base class</label>
+				{{ q["ctrl-list"] | raw }}
+			</div>
+		</div>
+		<div class="field">
+			<div class="ui slider {{inverted}} checkbox" id="auth-files-ck">
+			  <input type="checkbox" name="auth-files" id="auth-files">
+			  <label for="crud-files">Create override AuthFiles class</label>
+			</div>
+			<div id="div-view-list" style="display:none;width: 100%;">
+			<br>
+			{{ q["view-list"] | raw }}
+				<div id='ck-view-inheritance' class="ui {{inverted}} checkbox">
+				  <input type="checkbox" name="ck-use-inheritance" id="ck-use-inheritance">
+				  <label for="ck-use-inheritance">Use inheritance on views</label>
+				</div>
+			</div>
+		</div>
+		<div class="field">
+				<div class="ui {{inverted}} checkbox">
+				  <input type="checkbox" name="ck-add-route" id="ck-add-route">
+				  <label for="ck-add-route">Add route...</label>
+				</div>
+		</div>
+		<div id="div-new-route" style="display: none;">
+			<div class="ui divider"></div>
+			<div class="three fields">
+				<div class="field">
+					<label for="route-path">Path</label>
+					<input id="route-path" name="route-path" value="">
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+<div class="ui {{inverted}} segment">
+	<button id="validate-btn" class="ui button {{inverted}} positive">
+		<i id="icon-bt-okay" class="icon check circle"></i>
+		Validate
+	</button>
+	&nbsp;
+	<button id="cancel-btn" class="ui {{inverted}} button">
+		<i id="icon-bt-cancel" class="icon remove circle outline"></i>
+		Cancel
+	</button>
+</div>
+{{ script_foot | raw }}
