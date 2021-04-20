@@ -96,7 +96,8 @@ class MyRestController extends \Ubiquity\controllers\rest\api\json\JsonRestContr
 	 * @authorization
 	 */
 	#[Put('{resource}/{id}',priority: 0)]
-	public function update($resource,...$id ){
+	public function update($resource,$id ){
+		$id=\explode(',',$id);// A ajouter pour les clés composites
 		parent::update_($resource,...$id);
 	}
 }
